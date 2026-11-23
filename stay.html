@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>My stay — Sails on Kos</title>
+<meta name="description" content="Sails on Kos — glamping on Kos island, Greece. Private demo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geologica:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="demo-strip">Private demo prepared for <b>Sails on Kos</b> — guest guide and front desk. Sample data only.</div>
+<header class="site">
+  <div class="wrap nav-row">
+    <a class="logo" href="index.html"><img src="assets/img/logo-dark.svg" alt="Sails on Kos"><span>SAILS ON KOS</span></a>
+    <nav class="main">
+      <a href="index.html">Home</a>
+      <a href="tents.html">Accommodation</a>
+      <a href="restaurant.html">Restaurant</a>
+      <a href="charges.html">Dining & Charges</a>
+      <a href="activities.html">Activities</a>
+      <a href="around.html">Around Kos</a>
+      <a href="news.html">Journal</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="head-buttons">
+      <a class="btn btn-dark" href="stay.html">My stay</a>
+      <a class="btn btn-yellow" href="https://sailsonkos.reserve-online.net" target="_blank" rel="noopener">Book now</a>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <span class="eyebrow">Guest area · demonstration</span>
+    <h1>My stay</h1>
+    <p class="lead">Your booking, the information you need, the questions we ask you, and a direct line
+    to the front desk — on one page. This is a demonstration with sample data.</p>
+    <p><span class="badge">Sample booking</span> <span class="badge">Chat: sample conversation</span>
+    <span class="badge">Booking data from your system — to be agreed</span></p>
+  </div>
+</section>
+
+<section class="alt" id="loginSection">
+  <div class="wrap">
+    <div class="stay-login">
+      <h2>Enter your booking</h2>
+      <p class="lead">Use the booking number from your confirmation email and the last name on the
+      booking.</p>
+      <form id="loginForm" class="stay-form">
+        <label>Booking number<input id="fBooking" type="text" value="28-1-2026" autocomplete="off"></label>
+        <label>Last name<input id="fName" type="text" value="Andersson" autocomplete="off"></label>
+        <button class="btn btn-yellow" type="submit">Open my stay</button>
+      </form>
+      <p class="note">Demo access: booking <b>28-1-2026</b>, last name <b>Andersson</b>. Nothing here
+      is connected to a live system yet — in your version the booking arrives from your own system.</p>
+    </div>
+  </div>
+</section>
+
+<section id="stayPanel" hidden>
+  <div class="wrap">
+    <div class="stay-head">
+      <div>
+        <span class="eyebrow">Welcome</span>
+        <h2>Villa Tent · booking 28-1-2026</h2>
+        <p class="lead">2 nights · 4 guests · 15 – 17 May · breakfast included</p>
+      </div>
+      <a class="btn btn-line" href="#" id="logout">Sign out</a>
+    </div>
+    <div class="grid">
+      <article class="card"><div class="body">
+        <span class="meta">Your booking</span>
+        <h3>Villa Tents</h3>
+        <table class="hours">
+          <tr><td>Guests</td><td>4 — 2 adults, 2 children</td></tr>
+          <tr><td>Arrival</td><td>15 May, from 15:00</td></tr>
+          <tr><td>Departure</td><td>17 May, by 11:00</td></tr>
+          <tr><td>Breakfast</td><td>Included — 4 per day</td></tr>
+          <tr><td>Balance at check-out</td><td>€ 918.00</td></tr>
+        </table>
+        <a class="more" href="charges.html">What can be charged to your room</a>
+      </div></article>
+
+      <article class="card"><div class="body">
+        <span class="meta">Important information</span>
+        <h3>Good to know</h3>
+        <table class="hours">
+          <tr><td>Reception</td><td>08:00 – 22:00</td></tr>
+          <tr><td>Breakfast</td><td>07:30 – 10:00 · Taverna</td></tr>
+          <tr><td>Restaurant</td><td>12:30 – 16:00 &amp; 18:30 – 22:00</td></tr>
+          <tr><td>Bar</td><td>10:00 – 23:00</td></tr>
+          <tr><td>Wi-Fi</td><td>SailsGuest — password at the desk</td></tr>
+          <tr><td>Beach</td><td>Private area, towels at reception</td></tr>
+        </table>
+      </div></article>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="questionsPanel" hidden>
+  <div class="wrap split">
+    <div>
+      <span class="eyebrow">Our questions to you</span>
+      <h2>A few things to make your stay smooth</h2>
+      <p class="lead">Answer in a moment — the front desk sees it right away, and you can change it any
+      time. No long forms, no phone calls.</p>
+      <form id="answersForm" class="stay-form">
+        <label>What time will you arrive?<input id="qArrival" type="text" placeholder="e.g. 16:30"></label>
+        <label>Car or scooter number (for the gate)<input id="qCar" type="text" placeholder="e.g. KOS 1234"></label>
+        <label>Anything to celebrate?<input id="qCelebrate" type="text" placeholder="birthday, anniversary, a picnic…"></label>
+        <label>Dietary notes or breakfast wish<input id="qDiet" type="text" placeholder="e.g. vegetarian, no lactose"></label>
+        <button class="btn btn-dark" type="submit">Save my answers</button>
+        <span id="answersSaved" class="saved" hidden>Saved — the front desk can see this.</span>
+      </form>
+    </div>
+    <div>
+      <span class="eyebrow">Chat with the front desk</span>
+      <h2>Ask us anything</h2>
+      <div class="chat" id="chat">
+        <div class="msg them">Welcome to Sails on Kos! Ask us about trips, taxis, a table at the
+        Taverna — or anything else.<span class="when">09:04</span></div>
+      </div>
+      <form id="chatForm" class="chat-form">
+        <input id="chatInput" type="text" placeholder="Write a message…" autocomplete="off">
+        <button class="btn btn-yellow" type="submit">Send</button>
+      </form>
+      <p class="note">Sample conversation for the demo. In your live version this same chat reaches
+      reception and keeps the whole history of the stay.</p>
+    </div>
+  </div>
+</section>
+
+<script>
+(function () {
+  var loginSection = document.getElementById('loginSection');
+  var stayPanel = document.getElementById('stayPanel');
+  var questionsPanel = document.getElementById('questionsPanel');
+
+  function openStay(scroll) {
+    loginSection.hidden = true;
+    stayPanel.hidden = false;
+    questionsPanel.hidden = false;
+    if (scroll) window.scrollTo({ top: stayPanel.offsetTop - 90, behavior: 'smooth' });
+  }
+  function closeStay() {
+    stayPanel.hidden = true;
+    questionsPanel.hidden = true;
+    loginSection.hidden = false;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  document.getElementById('loginForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    openStay(true);
+  });
+
+  document.getElementById('logout').addEventListener('click', function (e) {
+    e.preventDefault();
+    closeStay();
+  });
+
+  // прямая ссылка на открытый кабинет: stay.html#open
+  if (location.hash === '#open') openStay(false);
+
+  document.getElementById('answersForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var s = document.getElementById('answersSaved');
+    s.hidden = false;
+    setTimeout(function () { s.hidden = true; }, 3200);
+  });
+
+  var chat = document.getElementById('chat');
+  var replies = [
+    'Of course — let me check that for you.',
+    'We can arrange that at the front desk. Anything else?',
+    'Breakfast is served in the Taverna from 07:30 to 10:00.',
+    'A table at the Taverna tonight? I will note it down for you.',
+    'We can book a taxi or the Nisyros boat trip whenever you like.'
+  ];
+  var ri = 0;
+
+  function now() {
+    var d = new Date();
+    return ('0' + d.getHours()).slice(-2) + ':' + ('0' + d.getMinutes()).slice(-2);
+  }
+  function add(text, cls) {
+    var d = document.createElement('div');
+    d.className = 'msg ' + cls;
+    d.innerHTML = text + '<span class="when">' + now() + '</span>';
+    chat.appendChild(d);
+    chat.scrollTop = chat.scrollHeight;
+  }
+
+  document.getElementById('chatForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var inp = document.getElementById('chatInput');
+    var v = inp.value.trim();
+    if (!v) return;
+    var safe = v.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    add(safe, 'me');
+    inp.value = '';
+    var t = document.createElement('div');
+    t.className = 'msg them typing';
+    t.textContent = 'typing…';
+    chat.appendChild(t);
+    chat.scrollTop = chat.scrollHeight;
+    setTimeout(function () {
+      chat.removeChild(t);
+      add(replies[ri % replies.length], 'them');
+      ri++;
+    }, 900);
+  });
+})();
+</script>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <img src="assets/img/logo-footer.svg" alt="Sails on Kos" style="height:40px;margin-bottom:.8rem">
+        <p>Family-run eco-luxury glamping retreat near Marmari Beach, Kos island, Greece.</p>
+      </div>
+      <div>
+        <h4>Find us</h4>
+        <p>Marmari, 85300 Kos, Greece<br>
+        <a href="tel:+30 694 890 4534">+30 694 890 4534</a> (En)<br>
+        <a href="tel:+30 697 207 0053">+30 697 207 0053</a> (Gr)<br>
+        <a href="mailto:info@sailsonkos.com">info@sailsonkos.com</a></p>
+      </div>
+      <div>
+        <h4>Guest guide</h4>
+        <p><a href="tents.html">Accommodation</a><br>
+        <a href="restaurant.html">Taverna &amp; Bar</a><br>
+        <a href="charges.html">Dining &amp; charges</a><br>
+        <a href="activities.html">Activities</a><br>
+        <a href="around.html">Around Kos</a><br>
+        <a href="news.html">Journal</a><br>
+        <a href="stay.html">My stay</a></p>
+      </div>
+      <div>
+        <h4>Booking</h4>
+        <p><a href="https://sailsonkos.reserve-online.net" target="_blank" rel="noopener">Book online</a><br>
+        <a href="contact.html">Contact us</a></p>
+      </div>
+    </div>
+    <div class="copy">
+      <span>&copy; 2026 Sails on Kos — content and photographs belong to Sails on Kos.</span>
+      <span>Demonstration build: guest guide &amp; front desk concept.</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

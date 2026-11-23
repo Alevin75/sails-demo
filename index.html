@@ -141,7 +141,7 @@ h2.sec{font-size:13px;text-transform:uppercase;letter-spacing:.12em;font-weight:
 
   <header class="top">
     <a class="brand" href="#home"><img src="assets/img/logo-dark.svg" alt="Sails on Kos"><span>SAILS ON KOS</span></a>
-    <div class="lang"><button id="langEn" class="on">EN</button><button id="langEl">ΕΛ</button><button id="langRu">RU</button></div>
+    <div class="lang"><button id="langEn" class="on">EN</button><button id="langEl">ΕΛ</button><button id="langDe">DE</button><button id="langRu">RU</button></div>
   </header>
 
   <main>
@@ -192,6 +192,7 @@ h2.sec{font-size:13px;text-transform:uppercase;letter-spacing:.12em;font-weight:
           </div>
           <div class="pills" id="cPills"></div>
           <div id="cBody"></div>
+          <p class="note" style="margin-top:14px" data-i18n="cabNote">This guest area is prepared for you individually, on request. It brings together the booking, the questions we ask, charges to the room — and a direct chat between the guest and reception.</p>
         </div>
       </div>
     </section>
@@ -343,6 +344,8 @@ var ICON = {
   events:'<path d="M4 6h16v15H4z"/><path d="M4 10h16M8 3v4M16 3v4"/><path d="M9 14l2 2 4-4"/>',
   more:'<circle cx="5" cy="12" r="1.5"/><circle cx="12" cy="12" r="1.5"/><circle cx="19" cy="12" r="1.5"/>'
 };
+/* ключи вкладок совпадают с именами экранов — заводим синонимы, чтобы иконки были у всех */
+ICON.stay = ICON.bed; ICON.charges = ICON.fork; ICON.around = ICON.map;
 var TABS = [
   ['home','Home'],['stay','My stay'],['charges','Dining'],['events','Events'],['around','Around'],['more','More']
 ];
@@ -353,6 +356,7 @@ var RU = {
   myStay:'Моя бронь', bookNow:'Забронировать', thisWeek:'На этой неделе в Sails',
   guestArea:'Кабинет гостя', loginLead:'Введите номер брони из письма-подтверждения и фамилию из брони.',
   bookingNo:'Номер брони', lastName:'Фамилия', openStay:'Открыть мою бронь', demoAccess:'Демо-доступ', noLive:'Пока ничего не подключено к рабочей системе.',
+  cabNote:'Этот кабинет готовится для вас индивидуально, под запрос. В нём: бронь, наши вопросы, счёт в номер — и прямой чат между гостем и ресепшеном.',
   signOut:'Выйти', concept:'Концепт · для обсуждения', chargesTitle:'Ресторан и счёт в номер',
   chargesLead:'Закажите в таверне или баре и отнесите на свой шатёр — тот же счёт приходит на ресепшен. Части из вашей системы помечены «по согласованию».',
   sampleData:'Пример данных', theFlow:'Как идёт счёт', s1t:'Гость заказывает', s1b:'Заказ за столом или у бара; официант отмечает ваш номер шатра — без бумаги.',
@@ -387,6 +391,7 @@ var EL = {
   guestArea:'Χώρος επισκέπτη', loginLead:'Βάλτε τον αριθμό κράτησης από το email επιβεβαίωσης και το επώνυμο της κράτησης.',
   bookingNo:'Αριθμός κράτησης', lastName:'Επώνυμο', openStay:'Άνοιγμα διαμονής', demoAccess:'Δοκιμαστική πρόσβαση',
   noLive:'Δεν είναι ακόμη συνδεδεμένο με πραγματικό σύστημα.',
+  cabNote:'Ο χώρος αυτός ετοιμάζεται για εσάς ξεχωριστά, κατόπιν αιτήματος. Περιλαμβάνει την κράτηση, τις ερωτήσεις μας, χρεώσεις στο δωμάτιο — και άμεση συνομιλία μεταξύ επισκέπτη και ρεσεψιόν.',
   signOut:'Έξοδος', concept:'Ιδέα · προς συζήτηση', chargesTitle:'Εστιατόριο & χρεώσεις στο δωμάτιο',
   chargesLead:'Παραγγείλτε στην ταβέρνα ή στο μπαρ και χρεώστε τη σκηνή σας — η ίδια χρέωση φτάνει στη ρεσεψιόν.',
   sampleData:'Δείγμα δεδομένων', theFlow:'Πώς ταξιδεύει η χρέωση',
@@ -414,9 +419,46 @@ var EL = {
   openJournal:'Εφημερίδα — νέα του νησιού', openContacts:'Επικοινωνία', openDesk:'Οθόνη ρεσεψιόν (επίδειξη)', openEvents:'Εκδηλώσεις & catering',
   evNote:'Γάμοι, επέτειοι και πικνίκ είναι μέρος της δουλειάς σας. Εδώ φαίνεται πώς το αίτημα φτάνει στη ρεσεψιόν.'
 };
+var DE = {
+  home:'Start', stay:'Aufenthalt', charges:'Rechnung', events:'Events', around:'Rund um Kos', more:'Mehr',
+  journal:'Zeitung', contact:'Kontakt',
+  heroTitle:'Entdecken Sie Ihr ideales Insel-Glamping',
+  heroSub:'Fünf Zeltarten, herzliche Gastfreundschaft und hochwertiges Essen — wenige Schritte von den Sandstränden von Marmari.',
+  myStay:'Mein Aufenthalt', bookNow:'Buchen', thisWeek:'Diese Woche bei Sails',
+  guestArea:'Gästebereich', loginLead:'Geben Sie die Buchungsnummer aus der Bestätigungs-E-Mail und den Nachnamen der Buchung ein.',
+  bookingNo:'Buchungsnummer', lastName:'Nachname', openStay:'Aufenthalt öffnen', demoAccess:'Demo-Zugang',
+  noLive:'Noch nicht mit einem Live-System verbunden.',
+  cabNote:'Dieser Gästebereich wird individuell für Sie erstellt, auf Anfrage. Er umfasst die Buchung, unsere Fragen, Rechnungen aufs Zimmer — und einen direkten Chat zwischen Gast und Rezeption.',
+  signOut:'Abmelden', concept:'Konzept · zur Diskussion', chargesTitle:'Restaurant & Rechnung aufs Zimmer',
+  chargesLead:'Bestellen Sie in der Taverne oder an der Bar und schreiben Sie es auf Ihr Zelt — dieselbe Rechnung erreicht die Rezeption.',
+  sampleData:'Beispieldaten', theFlow:'So läuft die Rechnung',
+  s1t:'Der Gast bestellt', s1b:'Bestellung am Tisch oder an der Bar; der Kellner notiert Ihre Zeltnummer.',
+  s2t:'Küche und Bar sehen es', s2b:'Der Bon erscheint auf dem Küchenbildschirm und an der Bar mit Zeltnummer und Uhrzeit.',
+  s3t:'Die Rechnung geht aufs Zimmer', s3b:'Der Betrag wird auf die Buchung gebucht; Sie sehen Ihre offene Rechnung jederzeit.',
+  s4t:'Check-out auf einen Blick', s4b:'Die Rezeption sieht Zimmer- und Restaurant-Summe sowie den Saldo.',
+  menu:'Menü — antippen für Buchung aufs Zimmer', menuHint:'Melden Sie sich unter „Mein Aufenthalt“ an, um zu buchen.',
+  seeDesk:'Rezeptionsansicht', yourTab:'Ihre Rechnung',
+  aroundTitle:'Wo Sie sind — und was in der Nähe ist',
+  aroundLead:'Sails on Kos liegt auf ruhigem Land in Marmari, wenige Schritte vom Strand. Fast alles Sehenswerte ist nah.',
+  journalTitle:'Neuigkeiten der Insel', journalLead:'Was auf Kos und in Griechenland passiert — aus griechischen Quellen.',
+  gi:'Griechenland in den Nachrichten', contactTitle:'Kontakt aufnehmen', address:'Adresse',
+  bookOnline:'Online buchen', contactNote:'Auf ruhigem Land wenige Schritte vom Strand von Marmari, an der Nordküste von Kos.',
+  frontDesk:'Rezeption · Demonstration', deskTitle:'Rezeption, ein Bildschirm', occupancy:'Auslastung', arrivals:'Anreisen heute',
+  departures:'Abreisen', breakfasts:'Frühstücke', todayArrivals:'Heutige Anreisen',
+  chargesToday:'Restaurant-Rechnungen aufs Zimmer — heute',
+  deskNote:'Der Bildschirm zeigt Anreisen, Frühstücke und Salden. In der Live-Version liest er aus Ihrem System.',
+  booking:'Buchung', info:'Info', questions:'Unsere Fragen', chat:'Chat', myTab:'Meine Rechnung',
+  eventsTag:'Events', eventsTitle:'Hochzeiten, Feiern & Picknicks',
+  eventsLead:'Gäste kommen zu uns, um zu heiraten, Geburtstag oder Jubiläum zu feiern, für Picknicks und Partys. Die Anfrage erreicht die Rezeption sofort.',
+  catering:'Catering-Pakete', evAskTitle:'Erzählen Sie uns von Ihrem Event', evAskBtn:'Anfrage senden',
+  evSent:'Danke — die Rezeption hat Ihre Anfrage erhalten.', evRequested:'Was wird gefeiert', evGuests:'Wie viele Gäste', evDate:'Datum',
+  moreTitle:'Mehr', moreLead:'Neuigkeiten der Insel, Kontakt und die Rezeptionsansicht.',
+  openJournal:'Zeitung — Neuigkeiten der Insel', openContacts:'Kontakt', openDesk:'Rezeptionsansicht (Demo)', openEvents:'Events & Catering',
+  evNote:'Hochzeiten, Jubiläen und Picknicks gehören zu Ihrer Arbeit. Hier sehen Sie, wie eine Anfrage die Rezeption erreicht.'
+};
 
 var LANG = 'en';
-function L(k){ if(LANG==='ru') return RU[k]; if(LANG==='el') return EL[k]; return undefined; }
+function L(k){ if(LANG==='ru') return RU[k]; if(LANG==='el') return EL[k]; if(LANG==='de') return DE[k]; return undefined; }
 function t(k){ return L(k) || null; }
 function applyLang(){
   document.querySelectorAll('[data-i18n]').forEach(function(el){
@@ -426,6 +468,7 @@ function applyLang(){
   });
   document.getElementById('langEn').classList.toggle('on', LANG==='en');
   document.getElementById('langEl').classList.toggle('on', LANG==='el');
+  document.getElementById('langDe').classList.toggle('on', LANG==='de');
   document.getElementById('langRu').classList.toggle('on', LANG==='ru');
   buildTabs();
   renderMore();
@@ -640,10 +683,11 @@ document.getElementById('logoutBtn').onclick = function(){
 };
 document.getElementById('langEn').onclick = function(){ LANG='en'; applyLang(); renderHome(); };
 document.getElementById('langEl').onclick = function(){ LANG='el'; applyLang(); renderHome(); };
+document.getElementById('langDe').onclick = function(){ LANG='de'; applyLang(); renderHome(); };
 document.getElementById('langRu').onclick = function(){ LANG='ru'; applyLang(); renderHome(); };
 
 window.addEventListener('hashchange', function(){ route(); updateTabFoot(); });
-var _lm = location.search.match(/[?&]lang=(en|el|ru)/); if(_lm) LANG = _lm[1];
+var _lm = location.search.match(/[?&]lang=(en|el|de|ru)/); if(_lm) LANG = _lm[1];
 renderHome(); renderAround(); renderNews(); renderMenu(); renderArrivals(); renderPack(); renderMore(); renderChargesToday();
 document.getElementById('evSend').onclick = function(){ toast(t('evSent') || 'Thank you — reception has your request.'); };
 buildTabs(); applyLang(); route();

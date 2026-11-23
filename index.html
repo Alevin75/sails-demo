@@ -9,23 +9,23 @@
 <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --dark:#362F2D; --dark2:#4a423f; --yellow:#FFCC00; --yellow2:#e0b400;
-  --green:#124d3a; --cream:#f0e4ca; --paper:#f7f7f7; --card:#fff;
-  --muted:#6f6662; --line:rgba(54,47,45,.14); --line2:rgba(54,47,45,.08);
-  --sh:0 8px 24px rgba(54,47,45,.12);
+  --green:#124D3A; --green2:#13A275; --bg:#F0E4CA; --card:#fff;
+  --ink:#212121; --muted:#6b625c; --line:rgba(18,77,58,.16); --line2:rgba(18,77,58,.09);
+  --yellow:#FFCC00; --sh:0 8px 24px rgba(18,77,58,.12);
+  --dark:#212121; --dark2:#6b625c; --cream:#F0E4CA; --paper:#fff; --yellow2:#13A275;
 }
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
 body{
-  margin:0; background:var(--dark); color:var(--dark);
+  margin:0; background:var(--green); color:var(--ink);
   font-family:"Geologica","Helvetica Neue",Helvetica,Arial,sans-serif;
   font-weight:300; font-size:16px; line-height:1.5;
 }
-.app{max-width:560px;margin:0 auto;min-height:100vh;background:var(--paper);
-  display:flex;flex-direction:column;box-shadow:0 0 60px rgba(0,0,0,.4);position:relative}
-.strip{background:var(--dark);color:#cfc7c3;font-size:11px;text-align:center;padding:7px 14px}
+.app{max-width:560px;margin:0 auto;min-height:100vh;background:var(--bg);
+  display:flex;flex-direction:column;box-shadow:0 0 60px rgba(0,0,0,.35);position:relative}
+.strip{background:var(--green);color:#F0E4CA;font-size:11px;text-align:center;padding:7px 14px}
 .strip b{color:var(--yellow)}
-.top{position:sticky;top:0;z-index:40;background:#fff;border-bottom:1px solid var(--line);
+.top{position:sticky;top:0;z-index:40;background:var(--bg);border-bottom:1px solid var(--line);
   display:flex;align-items:center;gap:10px;padding:10px 14px}
 .top .brand{display:flex;align-items:center;gap:8px;text-decoration:none;flex:1;min-width:0}
 .top .brand img{height:30px}
@@ -34,7 +34,7 @@ body{
 .lang{display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
 .lang button{border:0;background:#fff;color:var(--muted);font:inherit;font-weight:700;font-size:11px;
   padding:5px 10px;cursor:pointer;letter-spacing:.06em}
-.lang button.on{background:var(--dark);color:#fff}
+.lang button.on{background:var(--green);color:#fff}
 main{flex:1;padding-bottom:86px}
 .view{animation:fade .18s ease}
 .view[hidden]{display:none}
@@ -49,14 +49,14 @@ p{margin:0 0 .8em}
 a{color:var(--green)}
 img{max-width:100%;display:block}
 .btn{display:inline-block;border:0;font:inherit;font-weight:700;font-size:13px;letter-spacing:.04em;
-  text-transform:uppercase;padding:12px 16px;text-decoration:none;cursor:pointer;border-radius:10px}
-.btn-yellow{background:var(--yellow);color:var(--dark)}
-.btn-yellow:active{background:var(--yellow2)}
-.btn-dark{background:var(--dark);color:var(--cream)}
-.btn-line{background:#fff;color:var(--dark);border:2px solid var(--dark);border-radius:10px}
-.badge{display:inline-block;background:var(--dark);color:var(--cream);font-size:10px;font-weight:700;
+  text-transform:uppercase;padding:12px 18px;text-decoration:none;cursor:pointer;border-radius:24px}
+.btn-yellow{background:var(--green);color:var(--bg)}
+.btn-yellow:active{background:var(--green2)}
+.btn-dark{background:var(--ink);color:var(--bg)}
+.btn-line{background:transparent;color:var(--green);border:2px solid var(--green);border-radius:24px}
+.badge{display:inline-block;background:var(--green);color:var(--bg);font-size:10px;font-weight:700;
   letter-spacing:.06em;text-transform:uppercase;padding:4px 8px;border-radius:6px}
-.badge.alt{background:var(--cream);color:var(--dark)}
+.badge.alt{background:#fff;color:var(--green);border:1px solid var(--line)}
 .card{background:#fff;border-radius:14px;box-shadow:var(--sh);overflow:hidden;margin:0 0 14px}
 .card .b{padding:14px}
 .card img.cover{width:100%;aspect-ratio:16/9;object-fit:cover}
@@ -72,17 +72,17 @@ img{max-width:100%;display:block}
 .tiles{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:6px}
 .tile{background:#fff;border-radius:14px;box-shadow:var(--sh);padding:14px;text-decoration:none;color:var(--dark);
   display:flex;flex-direction:column;gap:6px}
-.tile .ic{width:34px;height:34px;border-radius:10px;background:var(--cream);display:flex;align-items:center;justify-content:center}
-.tile .ic svg{width:19px;height:19px;stroke:var(--dark);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.tile .ic{width:34px;height:34px;border-radius:10px;background:rgba(18,77,58,.08);display:flex;align-items:center;justify-content:center}
+.tile .ic svg{width:19px;height:19px;stroke:var(--green);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
 .tile b{font-weight:600;font-size:14px}
 .tile span{font-size:12px;color:var(--muted)}
 .tabbar{position:fixed;bottom:0;left:0;right:0;z-index:40;max-width:560px;margin:0 auto;
-  background:#fff;border-top:1px solid var(--line);display:flex;padding-bottom:env(safe-area-inset-bottom)}
+  background:var(--bg);border-top:1px solid var(--line);display:flex;padding-bottom:env(safe-area-inset-bottom)}
 .tab{flex:1;border:0;background:none;font:inherit;cursor:pointer;display:flex;flex-direction:column;
   align-items:center;gap:3px;padding:9px 0 8px;color:var(--muted);font-size:10px;font-weight:600}
-.tab.on{color:var(--dark)}
+.tab.on{color:var(--green)}
 .tab svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
-.tab.on .dot{background:var(--yellow)}
+.tab.on .dot{background:var(--green2)}
 .row{display:flex;align-items:center;gap:10px}
 .between{display:flex;align-items:center;justify-content:space-between;gap:10px}
 table.kv{width:100%;border-collapse:collapse}
@@ -96,16 +96,16 @@ input.t,select.t{width:100%;font:inherit;font-weight:300;padding:11px 12px;borde
 .pills{display:flex;gap:8px;overflow-x:auto;padding:4px 0 10px;-webkit-overflow-scrolling:touch}
 .pill{border:1px solid var(--line);background:#fff;font:inherit;font-weight:600;font-size:12px;padding:8px 12px;
   border-radius:999px;cursor:pointer;white-space:nowrap;color:var(--dark2)}
-.pill.on{background:var(--dark);color:#fff;border-color:var(--dark)}
+.pill.on{background:var(--green);color:var(--bg);border-color:var(--green)}
 .chat{background:#fff;border-radius:14px;box-shadow:var(--sh);padding:12px;display:flex;flex-direction:column;
   gap:8px;height:300px;overflow-y:auto}
 .msg{max-width:84%;padding:9px 11px;border-radius:12px;font-size:14px;line-height:1.4}
-.msg.them{background:var(--paper);align-self:flex-start;border-left:3px solid var(--yellow)}
+.msg.them{background:#fff;align-self:flex-start;border-left:3px solid var(--green2)}
 .msg.me{background:var(--green);color:#fff;align-self:flex-end}
 .msg .w{display:block;font-size:10px;opacity:.6;margin-top:3px}
 .chatbar{display:flex;gap:8px;margin-top:10px}
 .chatbar input{flex:1}
-.note{background:#fff8d9;border-left:4px solid var(--yellow);padding:10px 12px;border-radius:0 8px 8px 0;font-size:13px}
+.note{background:#fff;border-left:4px solid var(--green2);padding:10px 12px;border-radius:0 8px 8px 0;font-size:13px}
 .muted{color:var(--muted);font-size:13px}
 .kpis{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:8px 0 4px}
 .kpi{background:#fff;border-radius:14px;box-shadow:var(--sh);padding:14px}
@@ -119,20 +119,20 @@ input.t,select.t{width:100%;font:inherit;font-weight:300;padding:11px 12px;borde
 .li b{font-weight:600;font-size:14px}
 .li span{display:block;font-size:12px;color:var(--muted)}
 .price{margin-left:auto;font-weight:600;white-space:nowrap}
-.plus{border:0;background:var(--yellow);color:var(--dark);font:inherit;font-weight:700;font-size:12px;
+.plus{border:0;background:var(--green);color:var(--bg);font:inherit;font-weight:700;font-size:12px;
   padding:8px 12px;border-radius:999px;cursor:pointer;white-space:nowrap}
 .flow{display:grid;gap:10px;margin-top:8px}
 .step{background:#fff;border-radius:14px;box-shadow:var(--sh);padding:14px}
 .step .n{font-weight:700;color:var(--yellow2);font-size:20px}
 .tabfoot{position:fixed;bottom:86px;left:0;right:0;max-width:560px;margin:0 auto;padding:0 16px;z-index:35}
-.tabfoot .bar{background:var(--dark);color:#fff;border-radius:12px;padding:12px 14px;display:flex;
+.tabfoot .bar{background:var(--green);color:#fff;border-radius:12px;padding:12px 14px;display:flex;
   align-items:center;justify-content:space-between;box-shadow:0 12px 30px rgba(0,0,0,.35)}
 .tabfoot .bar b{color:var(--yellow)}
 .toast{position:fixed;left:0;right:0;bottom:96px;max-width:560px;margin:0 auto;padding:0 16px;z-index:60;pointer-events:none}
 .toast .m{background:var(--green);color:#fff;padding:12px 14px;border-radius:10px;font-size:13px;
   box-shadow:0 10px 24px rgba(0,0,0,.3);opacity:0;transform:translateY(8px);transition:.2s}
 .toast .m.on{opacity:1;transform:none}
-h2.sec{font-size:13px;text-transform:uppercase;letter-spacing:.12em;font-weight:700;color:var(--dark2)}
+h2.sec{font-size:13px;text-transform:uppercase;letter-spacing:.12em;font-weight:700;color:var(--green)}
 </style>
 </head>
 <body>
@@ -141,7 +141,7 @@ h2.sec{font-size:13px;text-transform:uppercase;letter-spacing:.12em;font-weight:
 
   <header class="top">
     <a class="brand" href="#home"><img src="assets/img/logo-dark.svg" alt="Sails on Kos"><span>SAILS ON KOS</span></a>
-    <div class="lang"><button id="langEn" class="on">EN</button><button id="langRu">RU</button></div>
+    <div class="lang"><button id="langEn" class="on">EN</button><button id="langEl">ΕΛ</button><button id="langRu">RU</button></div>
   </header>
 
   <main>
@@ -155,8 +155,7 @@ h2.sec{font-size:13px;text-transform:uppercase;letter-spacing:.12em;font-weight:
           <h1 data-i18n="heroTitle">Discover your ideal island glamping retreat</h1>
           <p data-i18n="heroSub">Five kinds of tent, warm personal hospitality and quality wholesome food — a short stroll from the sandy beaches of Marmari.</p>
           <div class="row">
-            <a class="btn btn-yellow" href="#stay" data-i18n="myStay">My stay</a>
-            <a class="btn btn-line" style="background:transparent;color:#fff;border-color:#fff" href="https://sailsonkos.reserve-online.net" target="_blank" rel="noopener" data-i18n="bookNow">Book now</a>
+            <a class="btn btn-yellow" href="https://sailsonkos.reserve-online.net" target="_blank" rel="noopener" data-i18n="bookNow">Book now</a>
           </div>
         </div>
       </div>
@@ -379,16 +378,54 @@ var RU = {
   openContacts:'Контакты', openDesk:'Экран ресепшена (демо)', openEvents:'Мероприятия и кейтеринг',
   evNote:'Свадьбы, годовщины и пикники — часть вашей работы. Здесь показано, как заявка и кейтеринг-набор доходят до ресепшена.'
 };
+var EL = {
+  home:'Αρχική', stay:'Διαμονή', charges:'Λογαριασμός', events:'Εκδηλώσεις', around:'Τριγύρω', more:'Άλλα',
+  journal:'Εφημερίδα', contact:'Επικοινωνία',
+  heroTitle:'Ανακαλύψτε το ιδανικό σας glamping καταφύγιο',
+  heroSub:'Πέντε είδη σκηνών, θερμή φιλοξενία και ποιοτικό φαγητό — λίγα βήματα από τις αμμώδεις παραλίες του Μαρμαρίου.',
+  myStay:'Η διαμονή μου', bookNow:'Κράτηση', thisWeek:'Αυτή την εβδομάδα στο Sails',
+  guestArea:'Χώρος επισκέπτη', loginLead:'Βάλτε τον αριθμό κράτησης από το email επιβεβαίωσης και το επώνυμο της κράτησης.',
+  bookingNo:'Αριθμός κράτησης', lastName:'Επώνυμο', openStay:'Άνοιγμα διαμονής', demoAccess:'Δοκιμαστική πρόσβαση',
+  noLive:'Δεν είναι ακόμη συνδεδεμένο με πραγματικό σύστημα.',
+  signOut:'Έξοδος', concept:'Ιδέα · προς συζήτηση', chargesTitle:'Εστιατόριο & χρεώσεις στο δωμάτιο',
+  chargesLead:'Παραγγείλτε στην ταβέρνα ή στο μπαρ και χρεώστε τη σκηνή σας — η ίδια χρέωση φτάνει στη ρεσεψιόν.',
+  sampleData:'Δείγμα δεδομένων', theFlow:'Πώς ταξιδεύει η χρέωση',
+  s1t:'Ο επισκέπτης παραγγέλνει', s1b:'Παραγγελία στο τραπέζι ή στο μπαρ· ο σερβιτόρος σημειώνει τη σκηνή σας.',
+  s2t:'Κουζίνα και μπαρ το βλέπουν', s2b:'Το δελτίο εμφανίζεται στην οθόνη κουζίνας και στο μπαρ με τη σκηνή και την ώρα.',
+  s3t:'Η χρέωση πάει στο δωμάτιο', s3b:'Το ποσό χρεώνεται στην κράτηση· βλέπετε τον λογαριασμό σας ανά πάσα στιγμή.',
+  s4t:'Αναχώρηση με μια ματιά', s4b:'Η ρεσεψιόν βλέπει το σύνολο δωματίου + εστιατορίου και το υπόλοιπο.',
+  menu:'Μενού — πατήστε για χρέωση στο δωμάτιο', menuHint:'Συνδεθείτε στην «Η διαμονή μου» για να χρεώσετε.',
+  seeDesk:'Οθόνη ρεσεψιόν', yourTab:'Ο λογαριασμός σας',
+  aroundTitle:'Πού βρίσκεστε — και τι είναι κοντά',
+  aroundLead:'Το Sails on Kos βρίσκεται σε ήσυχη γη στο Μαρμάρι, λίγα βήματα από την παραλία.',
+  journal:'Εφημερίδα', journalTitle:'Νέα του νησιού', journalLead:'Τι συμβαίνει στην Κω και την Ελλάδα — από ελληνικές πηγές.',
+  gi:'Η Ελλάδα στα νέα', contact:'Επικοινωνία', contactTitle:'Επικοινωνήστε', address:'Διεύθυνση',
+  bookOnline:'Κράτηση online', contactNote:'Σε ήσυχη γη λίγα βήματα από την παραλία του Μαρμαρίου, στη βόρεια ακτή της Κω.',
+  frontDesk:'Ρεσεψιόν · επίδειξη', deskTitle:'Ρεσεψιόν, μία οθόνη', occupancy:'Πληρότητα', arrivals:'Αφίξεις σήμερα',
+  departures:'Αναχωρήσεις', breakfasts:'Πρωινά', todayArrivals:'Σημερινές αφίξεις',
+  chargesToday:'Χρεώσεις εστιατορίου στα δωμάτια — σήμερα',
+  deskNote:'Η οθόνη δείχνει τις αφίξεις, τα πρωινά και τα υπόλοιπα. Στην πραγματική έκδοση διαβάζει από το σύστημά σας.',
+  booking:'Κράτηση', info:'Πληροφορίες', questions:'Οι ερωτήσεις μας', chat:'Συνομιλία', myTab:'Ο λογαριασμός μου',
+  eventsTag:'Εκδηλώσεις', eventsTitle:'Γάμοι, γιορτές & πικνίκ',
+  eventsLead:'Οι επισκέπτες μας έρχονται για γάμο, για γενέθλια ή επέτειο, για πικνίκ και πάρτι. Το αίτημα φτάνει αμέσως στη ρεσεψιόν.',
+  catering:'Πακέτα catering', evAskTitle:'Πείτε μας για την εκδήλωσή σας', evAskBtn:'Αποστολή αιτήματος',
+  evSent:'Ευχαριστούμε — η ρεσεψιόν έλαβε το αίτημά σας.', evRequested:'Τι γιορτάζουμε', evGuests:'Πόσοι επισκέπτες', evDate:'Ημερομηνία',
+  moreTitle:'Περισσότερα', moreLead:'Τα νέα του νησιού, πώς να μας βρείτε και η οθόνη της ρεσεψιόν.',
+  openJournal:'Εφημερίδα — νέα του νησιού', openContacts:'Επικοινωνία', openDesk:'Οθόνη ρεσεψιόν (επίδειξη)', openEvents:'Εκδηλώσεις & catering',
+  evNote:'Γάμοι, επέτειοι και πικνίκ είναι μέρος της δουλειάς σας. Εδώ φαίνεται πώς το αίτημα φτάνει στη ρεσεψιόν.'
+};
 
 var LANG = 'en';
-function t(k){ return (LANG === 'ru' && RU[k]) ? RU[k] : null; }
+function L(k){ if(LANG==='ru') return RU[k]; if(LANG==='el') return EL[k]; return undefined; }
+function t(k){ return L(k) || null; }
 function applyLang(){
   document.querySelectorAll('[data-i18n]').forEach(function(el){
-    var k = el.getAttribute('data-i18n'), ru = RU[k];
+    var k = el.getAttribute('data-i18n');
     if(!el.dataset.en) el.dataset.en = el.textContent;
-    el.textContent = (LANG === 'ru' && ru) ? ru : el.dataset.en;
+    el.textContent = L(k) || el.dataset.en;
   });
   document.getElementById('langEn').classList.toggle('on', LANG==='en');
+  document.getElementById('langEl').classList.toggle('on', LANG==='el');
   document.getElementById('langRu').classList.toggle('on', LANG==='ru');
   buildTabs();
   renderMore();
@@ -400,7 +437,7 @@ function buildTabs(){
   var h = '';
   TABS.forEach(function(tb){
     h += '<button class="tab" data-v="'+tb[0]+'"><svg viewBox="0 0 24 24">'+ICON[tb[0]]+'</svg>'
-       + '<span>'+(LANG==='ru'?(RU[tb[0]]||tb[1]):tb[1])+'</span></button>';
+       + '<span>'+(L(tb[0])||tb[1])+'</span></button>';
   });
   var bar = document.getElementById('tabbar');
   bar.innerHTML = h;
@@ -429,7 +466,7 @@ function renderHome(){
     ['contact','phone','Contact','Reach the front desk']
   ];
   document.getElementById('tiles').innerHTML = T.map(function(x){
-    var label = (LANG==='ru' && RU[x[0]]) ? RU[x[0]] : x[2];
+    var label = L(x[0]) || x[2];
     return '<a class="tile" href="#'+x[0]+'"><div class="ic"><svg viewBox="0 0 24 24">'+ICON[x[1]]+'</svg></div>'
       + '<b>'+label+'</b><span>'+x[3]+'</span></a>';
   }).join('');
@@ -489,7 +526,7 @@ function renderMore(){
     ['#contact','phone','Contact','openContacts','Reach the front desk']
   ];
   document.getElementById('moreList').innerHTML = M.map(function(x){
-    var label = (LANG==='ru' && RU[x[3]]) ? RU[x[3]] : x[2];
+    var label = L(x[3]) || x[2];
     return '<a class="li" href="'+x[0]+'"><div class="t"><b>'+label+'</b><span>'+x[4]+'</span></div></a>';
   }).join('');
 }
@@ -508,7 +545,7 @@ function renderCabinet(){
   document.getElementById('cabinet').hidden = false;
   var T = ['booking','info','questions','chat','myTab'];
   document.getElementById('cPills').innerHTML = T.map(function(k){
-    var lab = (LANG==='ru'&&RU[k])?RU[k]:({booking:'Booking',info:'Info',questions:'Our questions',chat:'Chat',myTab:'My tab'})[k];
+    var lab = L(k) || ({booking:'Booking',info:'Info',questions:'Our questions',chat:'Chat',myTab:'My tab'})[k];
     return '<button class="pill'+(k===CBTAB?' on':'')+'" data-k="'+k+'">'+lab+'</button>';
   }).join('');
   document.getElementById('cPills').querySelectorAll('.pill').forEach(function(p){
@@ -602,9 +639,11 @@ document.getElementById('logoutBtn').onclick = function(){
   updateTabFoot(); window.scrollTo(0,0);
 };
 document.getElementById('langEn').onclick = function(){ LANG='en'; applyLang(); renderHome(); };
+document.getElementById('langEl').onclick = function(){ LANG='el'; applyLang(); renderHome(); };
 document.getElementById('langRu').onclick = function(){ LANG='ru'; applyLang(); renderHome(); };
 
 window.addEventListener('hashchange', function(){ route(); updateTabFoot(); });
+var _lm = location.search.match(/[?&]lang=(en|el|ru)/); if(_lm) LANG = _lm[1];
 renderHome(); renderAround(); renderNews(); renderMenu(); renderArrivals(); renderPack(); renderMore(); renderChargesToday();
 document.getElementById('evSend').onclick = function(){ toast(t('evSent') || 'Thank you — reception has your request.'); };
 buildTabs(); applyLang(); route();
